@@ -2,18 +2,17 @@ module.exports = {
 
 
 
- users : [
-    
-    
-    ],
+ users : {
+   
+ },
    getAll(req,res){
 return this.users
    },
     newUser(email, password, url){
       this.users = []
-        this.users.push({ email});
-        this.users.push({password});
-        this.users.push({url});
+        this.users.push( email);
+        this.users.push(password);
+        this.users.push(url);
         
         
 
