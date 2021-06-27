@@ -6,104 +6,116 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <title>instabot</title>
     <style>
-     
-
-
         .card-login {
-          padding: 30px 0 0 0;
-          width: 350px;
-          margin: 0 auto;
+            padding: 5px 0 0 0;
+            width: 350px;
+            margin: 0 auto;
         }
+
         /* Barra de navegação
 -----------------------------*/
-header {
-	padding: 40px 0px;
-	background: rgb(83, 122, 182);;
-    
-}
 
-h1 {
-	font-weight: 900;
-	letter-spacing: -0.05em;
-	margin-bottom: 50px 50px;
-	color: white;
-    padding-left: 400px;
-   
-}
+        header {
+            padding: 40px 0px;
+            background: rgb(83, 122, 182);
+        }
 
-        
-      </style>
+        h1 {
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            margin-bottom: 30px;
+            color: white;
+            margin: auto 300px;
+        }
+
+        h3 {
+            color: rgb(83, 122, 182);
+            font-weight: 900;
+        }
+    </style>
 </head>
 
-<body  style="background-color: aliceblue;" >
-
-
-
-   
-    <header class="mb-4"><!-- inicio Cabecalho -->
-        
-          
-            
-      <h1 class="text-lg-right">InstaBot</h1>
-  
-            
-       
+<body style="background-color: aliceblue;">
+    <header class="mb-4">
+        <!-- inicio Cabecalho -->
+        <h1 class="text-lg-right">InstaBot</h1>
     </header>
+    <div class="container-fluid m-4 ">
+        <div id="users">
 
-
-      
-  
-      <div class="container m-4">    
+        </div>
         <div class="row ">
-  
-          <div class="card-login  mt-5" >
-            <div class="card ">
-              <div id="login" class="card-header"  style="background-color: rgb(83, 122, 182);" >
-                Login
-              </div>
-              <div class="card-body">
-                <form >
-                  <div class="form-group">
-                    <label for="userEmail" class=" form-label text-dark ">Email</label>
-                    <input type="email" name="email" class="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="@Email.com">
-                  </div>
-                  <div class="form-group">
-                    <label for="userSenha" class=" form-label">Senha</label>
-                    <input type="password" name="senha" class="form-control" id="userSenha" placeholder="******">
-                  </div>
-                  <label for="userUrl" class=" form-label text-dark ">Url</label>
-                  <input type="url" class="form-control" name="url" id="userUrl" aria-describedby="url" placeholder="http://exemplo.com/asdfgjhjkl">
+            <div class="card-login  mt-1">
+                <div class="card ">
+                    <div id="login" class="card-header" style="background-color: rgb(83, 122, 182);">
+                        Login
+                    </div>
+                    <div class="card-body">
 
-                 
-                    <button onclick="newUser()" type=" submit" class=" btn btn-primary mt-5" value="" >Entrar</button>
-                   
+                        <div class="form-group">
+                            <label for="userEmail" class=" form-label text-dark ">Email</label>
+                            <input type="email" name="email" class="form-control" id="userEmail"
+                                aria-describedby="emailHelp" placeholder="@Email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="userSenha" class=" form-label">Senha</label>
+                            <input type="password" name="senha" class="form-control" id="userSenha"
+                                placeholder="******">
+                        </div>
+                        <div class="form-group">
+                            <label for="userUrl" class=" form-label text-dark ">Url</label>
+                            <input type="url" class="form-control" name="url" id="userUrl" aria-describedby="url"
+                                placeholder="http://exemplo.com/asdfgjhjkl">
+                        </div>
+                        <div class="form-group">
+                            <label for="comentar" class=" form-label text-dark ">Comentários</label>
+
+                            <input type="text" class="form-control mr-2" name="comentar" id="userComentar"
+                                aria-describedby="url" placeholder="exemplo :Eu quero">
+
+                            <button type="button" onclick="adicionar()" class="btn btn-primary m-2 ">Adicionar</button>
+                            <button type="button" onclick="excluir()" class="btn btn-primary m-2">Excluir</button>
+                            <div id="res">
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="number" class=" form-label text-dark ">Quantidade de comentários</label>
+                            <input type="number" name="comentarios" class="form-control" id="userPausa"
+                                aria-describedby="quantidade" placeholder="quantidade">
+                        </div>
+                        <div class="form-group">
+                            <label for="number" class=" form-label text-dark ">Tempo variado em segundos</label>
+                            <input type="number" name="tempo" class="form-control" id="userTempo"
+                                aria-describedby="tempo em segundos" placeholder="60 segundos">
+                        </div>
+                        <div class="form-group">
+                            <label for="number" class=" form-label text-dark ">Pausa de Cometários</label>
+                            <input type="number" name="pausa" class="form-control" id="userPausaComent"
+                                aria-describedby="tempo em segundos" placeholder="60 segundos">
+                        </div>
+                        <button onclick="newUser()" type=" submit" class=" btn btn-primary mt-2"
+                            value="">Entrar</button>
+
 
 
                     </div>
-                    <div id="users">
-
-                    </div>
-
-                </form>
-              </div>
+                </div>
             </div>
-          </div>
-      </div>
-
-
-
-
-
-    
-    
-            
-            <script src="script.js "></script>
-            <script src=" https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js " integrity=" sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p " crossorigin=" anonymous "></script>
-            <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js " integrity=" sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT " crossorigin=" anonymous "></script>
+        </div>
+    </div>
+    <script src="script.js "></script>
+    <script src=" https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js "
+        integrity=" sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p "
+        crossorigin=" anonymous "></script>
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js "
+        integrity=" sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT "
+        crossorigin=" anonymous "></script>
 </body>
 
 </html>
