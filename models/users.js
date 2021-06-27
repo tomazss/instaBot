@@ -2,30 +2,20 @@ module.exports = {
 
 
 
- users : {
-   
- },
-   getAll(req,res){
-return this.users
-   },
-    newUser(email, password, url){
-      this.users = []
-        this.users.push( email);
-        this.users.push(password);
-        this.users.push(url);
-        
-        
+    users: [
 
 
-
+    ], getAll(){
+        return this.users
     },
-    deletePost(id){
-
+    newUser(email, senha, url, comentarios, tempo, pausa, comentar) {
+        this.users = [];
+        this.users.push(email);
+        this.users.push(senha);
+        this.users.push(url);
+        this.users.push(comentarios);
+        this.users.push(tempo);
+        this.users.push(pausa);
+        this.users.push(comentar);
     }
-  
-
-
-}
-function generateID(){
-    return Math.random().toString(36).substr(2,9);
 }
