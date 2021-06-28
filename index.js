@@ -52,11 +52,11 @@ app.use('/api', apiRoute, async function logar() {
 
         async function comentario() {
             for (let x = 1; x <= comentarios; x++) {
-                //sorteia o array random
+               
                 
-                await page.waitForTimeout(minutos(tempo));
+                
                 // comenta o array selecionadp
-                await page.type('.Ypffh', comentar[Math.floor(Math.random() * comentar.length)] );
+                await page.type('.Ypffh', comentar[Math.floor(Math.random() * comentar.length)] ); //sorteia o array random
     
                 await page.waitForTimeout(3000);
                 //clica no botão
