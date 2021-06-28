@@ -39,7 +39,7 @@ app.use('/api', apiRoute, async function logar() {
 
 
 
-    await page.type('[name="username"] ',email );
+    await page.type('[name="username"] ', email);
     await page.type('[name="password"]', senha);
     await page.waitForTimeout(4000); //tempo para ir para o proximo comando
 
@@ -50,113 +50,30 @@ app.use('/api', apiRoute, async function logar() {
     await page.waitForTimeout(3000);
     
 
-    for (let x = 1; x < comentarios; x++) {
-       
-       
-
-        // comenta o array selecionadp
-        await page.type('.Ypffh',comentar[Math.floor(Math.random() * comentar.length)] );
-        await page.waitForTimeout(3000);
-
-        //clica no botão
-        await page.click('[type="submit"]')
-
-        console.log(x)
-        await page.waitForTimeout(minutos(tempo));
-
-    }
-    await page.waitForTimeout(minutos(pausa));
-
-
-    for (let x = 1; x < comentarios; x++) {
-        //sorteia o array random
-        
-        // comenta o array selecionadp
-        await page.type('.Ypffh', comentar[Math.floor(Math.random() * comentar.length)]);
-        await page.waitForTimeout(3000);
-
-        //clica no botão
-        await page.click('[type="submit"]')
-
-        console.log(x)
-        await page.waitForTimeout(minutos(tempo));
-
-    }
-    await page.waitForTimeout(minutos(pausa));
-
-
-    for (let x = 1; x < comentarios; x++) {
-        //sorteia o array random
-        
-
-        // comenta o array selecionadp
-        await page.type('.Ypffh', comentar[Math.floor(Math.random() * comentar.length)]);
-        await page.waitForTimeout(3000);
-
-        //clica no botão
-        await page.click('[type="submit"]')
-
-        console.log(x)
-        await page.waitForTimeout(minutos(tempo));
-
-    }
-    await page.waitForTimeout(minutos(pausa));
-
-
-    for (let x = 1; x < comentarios; x++) {
-        //sorteia o array random
-      
-
-        // comenta o array selecionadp
-        await page.type('.Ypffh', comentar[Math.floor(Math.random() * comentar.length)]);
-        await page.waitForTimeout(3000);
-
-        //clica no botão
-        await page.click('[type="submit"]')
-
-        console.log(x)
-        await page.waitForTimeout(minutos(tempo));
-
-    }
-    await page.waitForTimeout(minutos(pausa));
-
-
-    for (let x = 1; x < comentarios; x++) {
-        //sorteia o array random
-        
-
-        // comenta o array selecionadp
-        await page.type('.Ypffh', comentar[Math.floor(Math.random() * comentar.length)]);
-        await page.waitForTimeout(3000);
-
-        //clica no botão
-        await page.click('[type="submit"]')
-
-        console.log(x)
-        await page.waitForTimeout(minutos(tempo));
-
-    }
-    await page.waitForTimeout(minutos(pausa));
-    for (let x = 1; x < comentarios; x++) {
-        //sorteia o array random
-       
-
-        // comenta o array selecionadp
-        await page.type('.Ypffh', comentar[Math.floor(Math.random() * comentar.length)]);
-        await page.waitForTimeout(3000);
-
-        //clica no botão
-        await page.click('[type="submit"]')
-
-        console.log(x)
-        await page.waitForTimeout(minutos(tempo));
-
-    }
-    await page.waitForTimeout(minutos(pausa));
-
-
-    //fecha o browser
-    await browser.close();
-});
-
-app.listen(process.env.PORT || port);
+        async function comentario() {
+            for (let x = 1; x <= comentarios; x++) {
+                //sorteia o array random
+                
+                await page.waitForTimeout(minutos(tempo));
+                // comenta o array selecionadp
+                await page.type('.Ypffh', comentar[Math.floor(Math.random() * comentar.length)] );
+    
+                await page.waitForTimeout(3000);
+                //clica no botão
+                await page.click('[type="submit"]')
+    
+                console.log(x)
+    
+                await page.waitForTimeout(minutos(tempo));
+            }
+        }
+        comentario();
+    
+        await page.waitForNavigation();
+    
+        setInterval(comentario, minutos(pausa));
+    
+        //fecha o browse    // await browser.close();
+    });
+    
+    app.listen(process.env.PORT || port);
