@@ -34,7 +34,7 @@ app.use('/api', apiRoute, async function logar() {
     function minutos(valor) {
         let mile = 1000;
         let result = valor * mile;
-        return Math.floor(Math.random() * result + 3000);
+        return Math.floor(Math.random() *1000 + result + 3000);
     };
 
 
