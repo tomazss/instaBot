@@ -1,0 +1,36 @@
+body{
+    background-color: aliceblue;
+}
+
+ .card-login {
+    padding: 5px 0 0 0;
+    width: 350px;
+    margin: 0 auto;
+}
+
+/* Barra de navegação
+-----------------------------*/
+
+header {
+    padding: 40px 0px;
+    background: rgb(83, 122, 182);
+}
+
+h1 {
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    margin-bottom: 30px;
+    color: white;
+    margin: auto 300px;
+}
+
+h3 {
+    color: rgb(83, 122, 182);
+    font-weight: 900;
+}
+#res{
+    background-color: beige;
+}
+#login{
+    background-color: rgb(83, 122, 182);
+}
