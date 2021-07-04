@@ -53,7 +53,7 @@ app.use('/api', apiRoute, async function logar() {
 
       
                     
-  //  https://www.instagram.com/p/BRWyJtTD-om/           
+             
                    
             
     async function comentario() {
