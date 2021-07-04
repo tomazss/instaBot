@@ -4,7 +4,7 @@ const users = require('./models/users')
 const apiRoute = require('./router/api')
 const app = express();
 const path = require('path');
-const port = 3000;
+const port = 8080;
 
 // craindo a rota api 
 
@@ -34,7 +34,7 @@ app.use('/api', apiRoute, async function logar() {
     function minutos(valor) {
         let mile = 1000;
         let result = valor * mile;
-        return Math.floor(Math.random() *1000 + result + 3000);
+        return Math.floor(Math.random() *9000 + result );
     };
 
 
@@ -45,34 +45,46 @@ app.use('/api', apiRoute, async function logar() {
 
     await page.click('.sqdOP.L3NKy.y3zKF');
     await page.waitForTimeout(4000);
+    
     //vai para a postagem especifica
     await page.goto(url);
     await page.waitForTimeout(3000);
     
 
-        async function comentario() {
-            for (let x = 1; x <= comentarios; x++) {
-               
-                
-                
-                // comenta o array selecionadp
-                await page.type('.Ypffh', comentar[Math.floor(Math.random() * comentar.length)] ); //sorteia o array random
+      
+                    
+  //  https://www.instagram.com/p/BRWyJtTD-om/           
+                   
+            
+    async function comentario() {
+        for (let x = 1; x <= comentarios; x++) {
+           
+            
+            
+            // comenta o array selecionadp
+            await page.type('.Ypffh', comentar[Math.floor(Math.random() * comentar.length)] ); //sorteia o array random
+
+            await page.waitForTimeout(3000);
+            //clica no botão
+            await page.click('[type="submit"]')
+
+            console.log(x)
+
+            await page.waitForTimeout(minutos(tempo));
+        }console.log(minutos(pausa) + minutos(tempo) * comentarios + 6000)
+    }
+    comentario();  
+
+console.log(minutos(pausa) + minutos(tempo) * comentarios + 6000)
+    await page.waitForNavigation();
+
+    setInterval(comentario, minutos(pausa) + minutos(tempo)*comentarios + 6000);
     
-                await page.waitForTimeout(3000);
-                //clica no botão
-                await page.click('[type="submit"]')
+
+        
+       
     
-                console.log(x)
-    
-                await page.waitForTimeout(minutos(tempo));
-            }
-        }
-        comentario();
-    
-        await page.waitForNavigation();
-    
-        setInterval(comentario, minutos(pausa));
-    
+        
         //fecha o browse    // await browser.close();
     });
     
