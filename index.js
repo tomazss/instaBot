@@ -67,7 +67,7 @@ app.use('/api', apiRoute, async function logar() {
             //clica no botão
             await page.click('[type="submit"]')
 
-            console.log(x, segundos(tempo))
+            console.log(x)
 
             await page.waitForTimeout(segundos(tempo));
         }console.log(minutos(pausa) + segundos(tempo) * comentarios +100000 )
