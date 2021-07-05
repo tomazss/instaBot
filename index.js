@@ -4,7 +4,7 @@ const users = require('./models/users')
 const apiRoute = require('./router/api')
 const app = express();
 const path = require('path');
-const port = 8080;
+const port = 3000;
 
 // craindo a rota api 
 
@@ -31,13 +31,16 @@ app.use('/api', apiRoute, async function logar() {
     await page.goto('https://www.instagram.com/'); // vai para a pagina de login
     await page.waitForTimeout(4000)
 
-    function minutos(valor) {
+    function segundos(valor) {
         let mile = 1000;
         let result = valor * mile;
-        return Math.floor(Math.random() *9000 + result );
+        return Math.floor(Math.random() * 5000 + result + 3000);
     };
-
-
+    function minutos(valor) {
+        let mile = 1000 * 60 ;
+        let result = valor * mile;
+        return Math.floor(result);
+    };
 
     await page.type('[name="username"] ', email);
     await page.type('[name="password"]', senha);
@@ -45,18 +48,14 @@ app.use('/api', apiRoute, async function logar() {
 
     await page.click('.sqdOP.L3NKy.y3zKF');
     await page.waitForTimeout(4000);
-    
     //vai para a postagem especifica
     await page.goto(url);
     await page.waitForTimeout(3000);
-    
+//🔥❤️🎉🎃😍🪀🤑🎯🤗
 
-      
-                    
-             
-                   
-            
-    async function comentario() {
+
+
+     async function comentario() {
         for (let x = 1; x <= comentarios; x++) {
            
             
@@ -68,24 +67,18 @@ app.use('/api', apiRoute, async function logar() {
             //clica no botão
             await page.click('[type="submit"]')
 
-            console.log(x)
+            console.log(x, segundos(tempo))
 
-            await page.waitForTimeout(minutos(tempo));
-        }console.log(minutos(pausa) + minutos(tempo) * comentarios + 6000)
+            await page.waitForTimeout(segundos(tempo));
+        }console.log(minutos(pausa) + segundos(tempo) * comentarios +100000 )
     }
     comentario();  
 
-console.log(minutos(pausa) + minutos(tempo) * comentarios + 6000)
+console.log(minutos(pausa)  + segundos(tempo) * comentarios + 100000)
     await page.waitForNavigation();
 
-    setInterval(comentario, minutos(pausa) + minutos(tempo)*comentarios + 6000);
+    setInterval(comentario, minutos(pausa)  + segundos(tempo)*comentarios+100000);
     
+});
 
-        
-       
-    
-        
-        //fecha o browse    // await browser.close();
-    });
-    
-    app.listen(process.env.PORT || port);
+app.listen(process.env.PORT || port);
