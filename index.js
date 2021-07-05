@@ -51,7 +51,11 @@ app.use('/api', apiRoute, async function logar() {
     //vai para a postagem especifica
     await page.goto(url);
     await page.waitForTimeout(3000);
-//🔥❤️🎉🎃😍🪀🤑🎯🤗
+//Eu quero ,dessa vez eu ganho,Eu,É meu,meuuu,Fé que vou ganhar,Já é meu Sorte Eu 
+// quero ganhar esse sorteio  Vamos lá
+//❤️ ❤🎮Eu quero ❤🎮,Ok , 🙌 😅 😮 👏  🔥✅👽👽 🚀🔝 😛😜😝
+//🌞 🍎 👼👼💜🖱🖥😎🔔🛐😳🥰🔥❤️🎉🎃😍🪀🤑🎯🤗
+
 
 
 
