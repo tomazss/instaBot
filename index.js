@@ -64,7 +64,7 @@ app.use('/api', apiRoute, async function logar() {
     await page.waitForTimeout(4000); //tempo para ir para o proximo comando
 
     await page.click('.sqdOP.L3NKy.y3zKF');
-    await page.waitForTimeout(180000);
+    await page.waitForTimeout(4000);
     //vai para a postagem especifica
     await page.goto(url);
     await page.waitForTimeout(3000);
