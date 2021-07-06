@@ -1,5 +1,5 @@
 const express = require('express');
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const users = require('./models/users')
 const apiRoute = require('./router/api')
 const app = express();
@@ -24,7 +24,8 @@ app.use('/api', apiRoute, async function logar() {
     console.log(comentarios, tempo, pausa);
     const browser = await puppeteer.launch({
         headless: false,
-        slowMo: 400
+        slowMo: 400,
+        executablePath:'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
     });
     const page = await browser.newPage();
     await page.setDefaultNavigationTimeout(0);
@@ -34,7 +35,7 @@ app.use('/api', apiRoute, async function logar() {
     function segundos(valor) {
         let mile = 1000;
         let result = valor * mile;
-        return Math.floor(Math.random() * 1000 + result + 3000);
+        return Math.floor(Math.random() * 1000 + result);
     };
     function minutos(valor) {
         let mile = 1000 * 60 ;
@@ -42,15 +43,6 @@ app.use('/api', apiRoute, async function logar() {
         return Math.floor(result);
     };
 
-    await page.type('[name="username"] ', email);
-    await page.type('[name="password"]', senha);
-    await page.waitForTimeout(4000); //tempo para ir para o proximo comando
-
-    await page.click('.sqdOP.L3NKy.y3zKF');
-    await page.waitForTimeout(4000);
-    //vai para a postagem especifica
-    await page.goto(url);
-    await page.waitForTimeout(3000);
 //Eu quero ,dessa vez eu ganho,Eu,É meu,meuuu,Fé que vou ganhar,Já é meu Sorte Eu 
 // quero ganhar esse sorteio  Vamos lá
 //❤️ ❤🎮Eu quero ❤🎮,Ok , 🙌 😅 😮 👏  🔥✅👽👽 🚀🔝 😛😜😝
@@ -59,7 +51,27 @@ app.use('/api', apiRoute, async function logar() {
 
 
 
-     async function comentario() {
+
+
+
+
+
+
+
+
+    await page.type('[name="username"] ', email);
+    await page.type('[name="password"]', senha);
+    await page.waitForTimeout(4000); //tempo para ir para o proximo comando
+
+    await page.click('.sqdOP.L3NKy.y3zKF');
+    await page.waitForTimeout(180000);
+    //vai para a postagem especifica
+    await page.goto(url);
+    await page.waitForTimeout(3000);
+    
+
+        
+    async function comentario() {
         for (let x = 1; x <= comentarios; x++) {
            
             
@@ -83,6 +95,12 @@ console.log(minutos(pausa)  + segundos(tempo) * comentarios + 100000)
 
     setInterval(comentario, minutos(pausa)  + segundos(tempo)*comentarios+100000);
     
-});
-
-app.listen(process.env.PORT || port);
+           
+        await page.waitForNavigation();
+    
+        
+    
+        //fecha o browse    // await browser.close();
+    });
+    
+    app.listen(process.env.PORT || port);
