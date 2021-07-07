@@ -24,7 +24,7 @@ app.use('/api', apiRoute, async function logar() {
     console.log(comentarios, tempo, pausa);
     const browser = await puppeteer.launch({
         headless: false,
-        slowMo: 400,
+        slowMo: 350,
         executablePath:'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
     });
     const page = await browser.newPage();
@@ -86,14 +86,14 @@ app.use('/api', apiRoute, async function logar() {
             console.log(x)
 
             await page.waitForTimeout(segundos(tempo));
-        }console.log(minutos(pausa) + segundos(tempo) * comentarios +100000 )
+        }console.log(minutos(pausa) + segundos(tempo) * comentarios + 10000 * comentarios )
     }
     comentario();  
 
-console.log(minutos(pausa)  + segundos(tempo) * comentarios + 100000)
+
     await page.waitForNavigation();
 
-    setInterval(comentario, minutos(pausa)  + segundos(tempo)*comentarios+100000);
+    setInterval(comentario, minutos(pausa)  + segundos(tempo)*comentarios + 10000 * comentarios);
     
            
         await page.waitForNavigation();
