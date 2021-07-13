@@ -1,7 +1,7 @@
 {
   "name": "variaveis",
   "version": "1.0.0",
-  "description": "",
+  "description": "Bot de  comentários instagram , colocando login, senha, url, quantidade de comentários, tempo entre eles, e pausas para começar novamente da página da foto .",
   "main": "index.js",
   "dependencies": {
     "express": "^4.17.1",
