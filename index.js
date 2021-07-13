@@ -1,5 +1,5 @@
 const express = require('express');
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const users = require('./models/users')
 const apiRoute = require('./router/api')
 const app = express();
@@ -24,18 +24,42 @@ app.use('/api', apiRoute, async function logar() {
     console.log(comentarios, tempo, pausa);
     const browser = await puppeteer.launch({
         headless: false,
-        slowMo: 400
+        slowMo: 350,
+        executablePath:'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
     });
     const page = await browser.newPage();
     await page.setDefaultNavigationTimeout(0);
     await page.goto('https://www.instagram.com/'); // vai para a pagina de login
     await page.waitForTimeout(4000)
 
-    function minutos(valor) {
+    function segundos(valor) {
         let mile = 1000;
         let result = valor * mile;
+<<<<<<< HEAD
         return Math.floor(Math.random() *9000 + result );
+=======
+        return Math.floor(Math.random() * 1000 + result);
     };
+    function minutos(valor) {
+        let mile = 1000 * 60 ;
+        let result = valor * mile;
+        return Math.floor(result);
+>>>>>>> f9873745e4963b4ad6a6d6815157b6e7a0ebb00b
+    };
+
+//Eu quero ,dessa vez eu ganho,Eu,É meu,meuuu,Fé que vou ganhar,Já é meu Sorte Eu 
+// quero ganhar esse sorteio  Vamos lá
+//❤️ ❤🎮Eu quero ❤🎮,Ok , 🙌 😅 😮 👏  🔥✅👽👽 🚀🔝 😛😜😝
+//🌞 🍎 👼👼💜🖱🖥😎🔔🛐😳🥰🔥❤️🎉🎃😍🪀🤑🎯🤗
+
+
+
+
+
+
+
+
+
 
 
 
@@ -51,11 +75,15 @@ app.use('/api', apiRoute, async function logar() {
     await page.waitForTimeout(3000);
     
 
+<<<<<<< HEAD
       
                     
   //  https://www.instagram.com/p/BRWyJtTD-om/           
                    
             
+=======
+        
+>>>>>>> f9873745e4963b4ad6a6d6815157b6e7a0ebb00b
     async function comentario() {
         for (let x = 1; x <= comentarios; x++) {
            
@@ -70,6 +98,7 @@ app.use('/api', apiRoute, async function logar() {
 
             console.log(x)
 
+<<<<<<< HEAD
             await page.waitForTimeout(minutos(tempo));
         }console.log(minutos(pausa) + minutos(tempo) * comentarios + 6000)
     }
@@ -83,6 +112,22 @@ console.log(minutos(pausa) + minutos(tempo) * comentarios + 6000)
 
         
        
+=======
+            await page.waitForTimeout(segundos(tempo));
+        }
+    }
+    comentario();  
+
+
+    await page.waitForNavigation();
+
+    setInterval(comentario, minutos(pausa)  + (segundos(tempo)+ 10000)  * comentarios);
+    
+           
+        await page.waitForNavigation();
+    
+        
+>>>>>>> f9873745e4963b4ad6a6d6815157b6e7a0ebb00b
     
         
         //fecha o browse    // await browser.close();
