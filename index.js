@@ -4,7 +4,7 @@ const users = require('./models/users')
 const apiRoute = require('./router/api')
 const app = express();
 const path = require('path');
-const port = 8080;
+const port = 3000;
 
 // craindo a rota api 
 
@@ -24,8 +24,8 @@ app.use('/api', apiRoute, async function logar() {
     console.log(comentarios, tempo, pausa);
     const browser = await puppeteer.launch({
         headless: false,
-        slowMo: 350,
-        executablePath:'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
+        slowMo: 380,
+        executablePath: 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
     });
     const page = await browser.newPage();
     await page.setDefaultNavigationTimeout(0);
@@ -35,29 +35,27 @@ app.use('/api', apiRoute, async function logar() {
     function segundos(valor) {
         let mile = 1000;
         let result = valor * mile;
-<<<<<<< HEAD
-        return Math.floor(Math.random() *9000 + result );
-=======
-        return Math.floor(Math.random() * 1000 + result);
+        return Math.floor(Math.random() * 3000 + result);
     };
     function minutos(valor) {
-        let mile = 1000 * 60 ;
+        let mile = 1000 * 60;
         let result = valor * mile;
         return Math.floor(result);
->>>>>>> f9873745e4963b4ad6a6d6815157b6e7a0ebb00b
     };
 
-//Eu quero ,dessa vez eu ganho,Eu,É meu,meuuu,Fé que vou ganhar,Já é meu Sorte Eu 
-// quero ganhar esse sorteio  Vamos lá
-//❤️ ❤🎮Eu quero ❤🎮,Ok , 🙌 😅 😮 👏  🔥✅👽👽 🚀🔝 😛😜😝
-//🌞 🍎 👼👼💜🖱🖥😎🔔🛐😳🥰🔥❤️🎉🎃😍🪀🤑🎯🤗
+    //Eu quero ,dessa vez eu ganho,Eu,É meu,meuuu,Fé que vou ganhar,Já é meu Sorte Eu 
+    // quero ganhar esse sorteio  Vamos lá
+    //❤️ ❤🎮Eu quero ❤🎮,Ok , 🙌 😅 😮 👏  🔥✅👽👽 🚀🔝 😛😜😝
+    //🌞 🍎 👼👼💜🖱🖥😎🔔🛐😳🥰🔥❤️🎉🎃😍🪀🤑🎯🤗
+
+    
+
+    //https://www.instagram.com/p/CReu3AjMLIm/ celular tom__
+    //https://www.instagram.com/p/CRfmrk9MtQc/ celular _tomazsil
+    //https://www.instagram.com/p/CRfnxm9nKUE/ celular tomazsila
 
 
-
-
-
-
-
+    
 
 
 
@@ -67,70 +65,74 @@ app.use('/api', apiRoute, async function logar() {
     await page.type('[name="password"]', senha);
     await page.waitForTimeout(4000); //tempo para ir para o proximo comando
 
-    await page.click('.sqdOP.L3NKy.y3zKF');
+    //clica no botão
+    await page.keyboard.press('Enter')
+    //await page.click('.sqdOP.L3NKy.y3zKF');
+
     await page.waitForTimeout(4000);
-    
     //vai para a postagem especifica
     await page.goto(url);
     await page.waitForTimeout(3000);
-    
 
-<<<<<<< HEAD
-      
-                    
-  //  https://www.instagram.com/p/BRWyJtTD-om/           
-                   
-            
-=======
-        
->>>>>>> f9873745e4963b4ad6a6d6815157b6e7a0ebb00b
+
+
     async function comentario() {
-        for (let x = 1; x <= comentarios; x++) {
-           
-            
-            
+        let x = 1
+        
+        for (x; x <= comentarios; x++) {
+
+
+
             // comenta o array selecionadp
-            await page.type('.Ypffh', comentar[Math.floor(Math.random() * comentar.length)] ); //sorteia o array random
+            await page.type('.Ypffh', comentar[Math.floor(Math.random() * comentar.length)]); //sorteia o array random
 
             await page.waitForTimeout(3000);
+
             //clica no botão
-            await page.click('[type="submit"]')
+            await page.keyboard.press('Enter')
+            // await page.click('[type="submit"]')
+            await page.waitForTimeout(1000)
+            async function comentarioBloqueado(page, selector) {
+                const bloqueio = await page.$(selector)
+                if (bloqueio) {
+                    console.log(email,'comentario bloqueado')
+                    await page.waitForTimeout(3000)
+                    await browser.close();
+                    await comentarioBloqueado(page, selector)
+                } else {
 
-            console.log(x)
+                    // comenta o array selecionado
 
-<<<<<<< HEAD
-            await page.waitForTimeout(minutos(tempo));
-        }console.log(minutos(pausa) + minutos(tempo) * comentarios + 6000)
-    }
-    comentario();  
 
-console.log(minutos(pausa) + minutos(tempo) * comentarios + 6000)
-    await page.waitForNavigation();
 
-    setInterval(comentario, minutos(pausa) + minutos(tempo)*comentarios + 6000);
-    
+                    await page.waitForTimeout(segundos(tempo));
+                }
 
-        
-       
-=======
+
+            }
+            await comentarioBloqueado(page, '.gxNyb')
+
+
             await page.waitForTimeout(segundos(tempo));
-        }
+        } 
+        console.log(email, x - 1)
+         
+        
+
     }
-    comentario();  
+    comentario();
 
 
     await page.waitForNavigation();
 
-    setInterval(comentario, minutos(pausa)  + (segundos(tempo)+ 10000)  * comentarios);
-    
-           
-        await page.waitForNavigation();
-    
-        
->>>>>>> f9873745e4963b4ad6a6d6815157b6e7a0ebb00b
-    
-        
-        //fecha o browse    // await browser.close();
-    });
-    
-    app.listen(process.env.PORT || port);
+    setInterval(comentario, minutos(pausa) + (segundos(tempo) + 10000) * comentarios);
+
+
+    await page.waitForNavigation();
+
+
+
+    //fecha o browse    // await browser.close();
+});
+
+app.listen(process.env.PORT || port);
