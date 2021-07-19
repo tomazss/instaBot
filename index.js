@@ -50,9 +50,7 @@ app.use('/api', apiRoute, async function logar() {
 
     
 
-    //https://www.instagram.com/p/CReu3AjMLIm/ celular tom__
-    //https://www.instagram.com/p/CRfmrk9MtQc/ celular _tomazsil
-    //https://www.instagram.com/p/CRfnxm9nKUE/ celular tomazsila
+    
 
 
     
@@ -83,7 +81,7 @@ app.use('/api', apiRoute, async function logar() {
 
 
 
-            // comenta o array selecionadp
+            // comenta o array selecionado
             await page.type('.Ypffh', comentar[Math.floor(Math.random() * comentar.length)]); //sorteia o array random
 
             await page.waitForTimeout(3000);
@@ -92,6 +90,8 @@ app.use('/api', apiRoute, async function logar() {
             await page.keyboard.press('Enter')
             // await page.click('[type="submit"]')
             await page.waitForTimeout(1000)
+           
+            //função quando bloqueia os comentarios
             async function comentarioBloqueado(page, selector) {
                 const bloqueio = await page.$(selector)
                 if (bloqueio) {
@@ -101,7 +101,7 @@ app.use('/api', apiRoute, async function logar() {
                     await comentarioBloqueado(page, selector)
                 } else {
 
-                    // comenta o array selecionado
+                   
 
 
 
