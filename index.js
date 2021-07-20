@@ -4,7 +4,7 @@ const users = require('./models/users')
 const apiRoute = require('./router/api')
 const app = express();
 const path = require('path');
-const port = 8080;
+const port = 3000;
 
 // craindo a rota api 
 
