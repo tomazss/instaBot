@@ -48,13 +48,9 @@ app.use('/api', apiRoute, async function logar() {
     //❤️ ❤🎮Eu quero ❤🎮,Ok , 🙌 😅 😮 👏  🔥✅👽👽 🚀🔝 😛😜😝
     //🌞 🍎 👼👼💜🖱🖥😎🔔🛐😳🥰🔥❤️🎉🎃😍🪀🤑🎯🤗
 
-    //
+ 
 
-    //https://www.instagram.com/p/CRiN7ENMqCe/ 8000 tom__sampaio
-    // celular _tomazsil bloqueado
-    //https://www.instagram.com/p/CRjThX3sRDQ/ 8000 tomazsila487 
-    //samptz3 bloqueado
-    //https://www.instagram.com/p/CRfhZsIsrus/ 8000 tz_sampaio3
+    
 
     
 
