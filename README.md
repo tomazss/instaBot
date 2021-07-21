@@ -7,4 +7,4 @@ npm init
 
 express  npm install express
 
-puppeteer-core  npm install puppeteer-core
+puppeteer  npm install puppeteer
