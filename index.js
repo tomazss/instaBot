@@ -48,13 +48,7 @@ app.use('/api', apiRoute, async function logar() {
     //❤️ ❤🎮Eu quero ❤🎮,Ok , 🙌 😅 😮 👏  🔥✅👽👽 🚀🔝 😛😜😝
     //🌞 🍎 👼👼💜🖱🖥😎🔔🛐😳🥰🔥❤️🎉🎃😍🪀🤑🎯🤗
 
-    //
-
-    //https://www.instagram.com/p/CRiN7ENMqCe/ 8000 tom__sampaio
-    // celular _tomazsil bloqueado
-    //https://www.instagram.com/p/CRjThX3sRDQ/ 8000 tomazsila487 
-    //samptz3 bloqueado
-    //https://www.instagram.com/p/CRfhZsIsrus/ 8000 tz_sampaio3
+   
 
     
 
@@ -97,10 +91,10 @@ app.use('/api', apiRoute, async function logar() {
                 const bloqueio = await page.$(selector)
                 if (bloqueio) {
                     console.log(email,'comentario bloqueado')
-                    await page.waitForTimeout(2000)
-                    await page.goto(url);
-                    await page.waitForTimeout(minutos(pausa) + (segundos(tempo) + 10000) * comentarios)
+                    await page.waitForTimeout(2000);
                     await comentarioBloqueado(page, selector)
+                     await page.waitForTimeout(4000);
+                    await browser.close();
                 } else {
 
                     // comenta o array selecionado
