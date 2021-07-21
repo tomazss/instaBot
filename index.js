@@ -48,10 +48,13 @@ app.use('/api', apiRoute, async function logar() {
     //❤️ ❤🎮Eu quero ❤🎮,Ok , 🙌 😅 😮 👏  🔥✅👽👽 🚀🔝 😛😜😝
     //🌞 🍎 👼👼💜🖱🖥😎🔔🛐😳🥰🔥❤️🎉🎃😍🪀🤑🎯🤗
 
-    
+    //
 
-    
-
+    //https://www.instagram.com/p/CRiN7ENMqCe/ 8000 tom__sampaio
+    // celular _tomazsil bloqueado
+    //https://www.instagram.com/p/CRjThX3sRDQ/ 8000 tomazsila487 
+    //samptz3 bloqueado
+    //https://www.instagram.com/p/CRfhZsIsrus/ 8000 tz_sampaio3
 
     
 
@@ -81,7 +84,7 @@ app.use('/api', apiRoute, async function logar() {
 
 
 
-            // comenta o array selecionado
+            // comenta o array selecionadp
             await page.type('.Ypffh', comentar[Math.floor(Math.random() * comentar.length)]); //sorteia o array random
 
             await page.waitForTimeout(3000);
@@ -90,18 +93,17 @@ app.use('/api', apiRoute, async function logar() {
             await page.keyboard.press('Enter')
             // await page.click('[type="submit"]')
             await page.waitForTimeout(1000)
-           
-            //função quando bloqueia os comentarios
             async function comentarioBloqueado(page, selector) {
                 const bloqueio = await page.$(selector)
                 if (bloqueio) {
                     console.log(email,'comentario bloqueado')
-                    await page.waitForTimeout(3000)
-                    await browser.close();
+                    await page.waitForTimeout(2000)
+                    await page.goto(url);
+                    await page.waitForTimeout(minutos(pausa) + (segundos(tempo) + 10000) * comentarios)
                     await comentarioBloqueado(page, selector)
                 } else {
 
-                   
+                    // comenta o array selecionado
 
 
 
