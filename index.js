@@ -1,5 +1,5 @@
 const express = require('express');
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const users = require('./models/users')
 const apiRoute = require('./router/api')
 const app = express();
@@ -13,7 +13,7 @@ app.use('/api', apiRoute)
 app.use(express.static(path.join(__dirname, "public")));
 
 
-app.use('/api/puppeteer', apiRoute, async function logar() {
+app.use('/api', apiRoute, async function logar() {
     let email = (users.users[0]);
     let senha = (users.users[1]);
     let url = (users.users[2]);
@@ -24,8 +24,8 @@ app.use('/api/puppeteer', apiRoute, async function logar() {
     console.log(comentarios, tempo, pausa);
     const browser = await puppeteer.launch({
         headless: false,
-        slowMo: 380
-        
+        slowMo: 380,
+        executablePath: 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
     });
     const page = await browser.newPage();
     await page.setDefaultNavigationTimeout(0);
@@ -48,10 +48,7 @@ app.use('/api/puppeteer', apiRoute, async function logar() {
     //❤️ ❤🎮Eu quero ❤🎮,Ok , 🙌 😅 😮 👏  🔥✅👽👽 🚀🔝 😛😜😝
     //🌞 🍎 👼👼💜🖱🖥😎🔔🛐😳🥰🔥❤️🎉🎃😍🪀🤑🎯🤗
 
- 
-
-    
-
+   
     
 
 
