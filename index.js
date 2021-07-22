@@ -1,5 +1,5 @@
 const express = require('express');
-const puppeteer = require('puppeteer-core');
+const puppeteer = require('puppeteer');
 const users = require('./models/users')
 const apiRoute = require('./router/api')
 const app = express();
@@ -24,8 +24,8 @@ app.use('/api/puppeteer', apiRoute, async function logar() {
     console.log(comentarios, tempo, pausa);
     const browser = await puppeteer.launch({
         headless: false,
-        slowMo: 380,
-        executablePath: 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
+        slowMo: 380
+        
     });
     const page = await browser.newPage();
     await page.setDefaultNavigationTimeout(0);
