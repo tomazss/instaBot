@@ -39,10 +39,10 @@ function newUser() {
         headers: new Headers({ 'content-type': 'application/json' }),
         body: JSON.stringify(user)
     }
-    fetch("http://http://localhost:3000/:3000/api/new", options).then(res => {
+    fetch("http://http://localhost:3000/api/new", options).then(res => {
         console.log(JSON.stringify(res));
     });
-    fetch("http://http://localhost:3000/:3000/api/puppeteer", options).then(res => {
+    fetch("http://http://localhost:3000/api/puppeteer", options).then(res => {
         console.log(JSON.stringify(res));
     });
     document.getElementById('userEmail').value = "";
