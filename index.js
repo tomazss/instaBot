@@ -91,8 +91,7 @@ app.use('/api', apiRoute, async function logar() {
                 if (bloqueio) {
                     console.log(email,'comentario bloqueado')
                     await page.waitForTimeout(2000)
-                    await page.goto(url);
-                    await page.waitForTimeout(minutos(pausa) + (segundos(tempo) + 10000) * comentarios)
+                    await browser.close();
                     await comentarioBloqueado(page, selector)
                 } else {
 
