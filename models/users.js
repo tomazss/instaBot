@@ -8,7 +8,7 @@ module.exports = {
     ], getAll(){
         return this.users
     },
-    newUser(email, senha, url, comentarios, tempo, pausa, comentar) {
+    novoUsuario(email, senha, url, comentarios, tempo, pausa, comentar) {
         this.users = [];
         this.users.push(email);
         this.users.push(senha);
