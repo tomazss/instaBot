@@ -42,10 +42,7 @@ function novoUsuario() {
     fetch("http://18.230.108.13:3333/api/new", options).then(res => {
         console.log(JSON.stringify(res));
     });
-    fetch("http://18.230.108.13:3333/api/all", options).then(res => {
- 
-        console.log(JSON.stringify(res));
-    });
+    fetch("http://18.230.108.13:3333/api/all")
     document.getElementById('userEmail').value = "";
     document.getElementById('userSenha').value = "";
     document.getElementById('userUrl').value = "";
