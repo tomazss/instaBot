@@ -8,7 +8,7 @@ router.get("/all", (req, res) => {
     res.json(JSON.stringify(users.getAll()));
 
 });
-router.get("/puppeteer", async(req, res) => {
+router.get("/all", async(req, res) => {
     logar()
 })
 
