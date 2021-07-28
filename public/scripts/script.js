@@ -39,8 +39,8 @@ function novoUsuario() {
         headers: new Headers({ 'content-type': 'application/json' }),
         body: JSON.stringify(user)
     }
-    fetch("http://18.230.108.13:3333/api/new", options)
-    fetch("http://18.230.108.13:3333/api/puppeteer")
+    fetch("http://localhost:3333/api/new", options)
+    fetch("http://localhost:3333/api/puppeteer")
     document.getElementById('userEmail').value = "";
     document.getElementById('userSenha').value = "";
     document.getElementById('userUrl').value = "";
