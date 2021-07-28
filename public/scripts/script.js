@@ -21,7 +21,7 @@ function excluir(){
    }
 
 
-function newUser() {
+function novoUsuario() {
 
     let email = document.getElementById('userEmail').value;
     let senha = document.getElementById('userSenha').value;
@@ -39,10 +39,10 @@ function newUser() {
         headers: new Headers({ 'content-type': 'application/json' }),
         body: JSON.stringify(user)
     }
-    fetch("http://localhost:3333/api/new", options).then(res => {
+    fetch("http://18.230.108.13:3333/api/new", options).then(res => {
         console.log(JSON.stringify(res));
     });
-    fetch("http://localhost:3333/api/puppeteer", options).then(res => {
+    fetch("http://18.230.108.13:3333/api/puppeteer", options).then(res => {
  
         console.log(JSON.stringify(res));
     });
