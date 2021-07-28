@@ -1,19 +1,34 @@
+
+
 body{
-    background-color: aliceblue;
+    background: url('../imagens/1f916.png') center no-repeat,
+				url('../imagens/ruido.png'),
+                
+				linear-gradient(50deg,#ff4169,#7c26f8);
+	background-attachment: fixed;
+     color: white;
 }
 
  .card-login {
     padding: 5px 0 0 0;
     width: 350px;
     margin: 0 auto;
+    
 }
 
 /* Barra de navegação
 -----------------------------*/
 
+ .imagem img{
+    margin: -80px;
+    padding-left: 30%;
+ }
+
 header {
-    padding: 40px 0px;
-    background: rgb(83, 122, 182);
+
+   height : 100px;
+    
+   background: rgba(0,0,0,0.4)
 }
 
 h1 {
@@ -25,12 +40,36 @@ h1 {
 }
 
 h3 {
-    color: rgb(83, 122, 182);
+    color: rgb(241, 245, 251);
     font-weight: 900;
+    
+}
+h4 {
+    color: rgb(241, 245, 251);
+    font-weight: 900;
+    
 }
 #res{
-    background-color: beige;
+    background-color:rgba(0,0,0,0.4) ;
 }
+.card{
+    background: 
+				url('../imagens/ruido.png'),
+                
+				linear-gradient(50deg,#ff4169,#7c26f8);
+	background-attachment: fixed;
+}
+.texto {
+    background: rgba(0,0,0,0.1);
+    margin-top: 2px;
+}
+
+
 #login{
-    background-color: rgb(83, 122, 182);
+    background: rgba(0,0,0,0.4);
 }
+.btn{
+    background: rgba(0,0,0,0.6);
+    color: white;
+}
+

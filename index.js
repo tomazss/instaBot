@@ -4,7 +4,7 @@ const users = require('./models/users')
 const apiRoute = require('./router/api')
 const app = express();
 const path = require('path');
-const port = 3000;
+const port = 3333;
 
 // craindo a rota api 
 
@@ -13,7 +13,7 @@ app.use('/api', apiRoute)
 app.use(express.static(path.join(__dirname, "public")));
 
 
-app.use('/api', apiRoute, async function logar() {
+app.use('/api/puppeteer', apiRoute, async function logar() {
     let email = (users.users[0]);
     let senha = (users.users[1]);
     let url = (users.users[2]);
@@ -23,11 +23,29 @@ app.use('/api', apiRoute, async function logar() {
     let comentar = (users.users[6]);
     console.log(comentarios, tempo, pausa);
     const browser = await puppeteer.launch({
+            
+       
+        defaultViewport: null,
+       
+        args : [
+            '--window-size=300,500',
+        
+          ], 
         headless: false,
+        
+       
         slowMo: 380,
-        executablePath: 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
+       
+        executablePath: 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome',
+       
+            
+          
     });
-    const page = await browser.newPage();
+    
+        const page = await browser.newPage();
+        
+   
+ 
     await page.setDefaultNavigationTimeout(0);
     await page.goto('https://www.instagram.com/'); // vai para a pagina de login
     await page.waitForTimeout(4000)
@@ -35,7 +53,7 @@ app.use('/api', apiRoute, async function logar() {
     function segundos(valor) {
         let mile = 1000;
         let result = valor * mile;
-        return Math.floor(Math.random() * 3000 + result);
+        return Math.floor(Math.random() * 9000 + result);
     };
     function minutos(valor) {
         let mile = 1000 * 60;
@@ -43,13 +61,9 @@ app.use('/api', apiRoute, async function logar() {
         return Math.floor(result);
     };
 
-    //Eu quero ,dessa vez eu ganho,Eu,É meu,meuuu,Fé que vou ganhar,Já é meu Sorte Eu 
-    // quero ganhar esse sorteio  Vamos lá
-    //❤️ ❤🎮Eu quero ❤🎮,Ok , 🙌 😅 😮 👏  🔥✅👽👽 🚀🔝 😛😜😝
-    //🌞 🍎 👼👼💜🖱🖥😎🔔🛐😳🥰🔥❤️🎉🎃😍🪀🤑🎯🤗
-
-   
     
+
+
 
 
 
@@ -72,7 +86,7 @@ app.use('/api', apiRoute, async function logar() {
 
     async function comentario() {
         let x = 1
-        
+
         for (x; x <= comentarios; x++) {
 
 
@@ -89,9 +103,15 @@ app.use('/api', apiRoute, async function logar() {
             async function comentarioBloqueado(page, selector) {
                 const bloqueio = await page.$(selector)
                 if (bloqueio) {
-                    console.log(email,'comentario bloqueado')
+                    console.log(email, 'comentario bloqueado', x)
                     await page.waitForTimeout(2000)
                     await browser.close();
+
+                 
+
+                   
+
+
                     await comentarioBloqueado(page, selector)
                 } else {
 
@@ -107,11 +127,12 @@ app.use('/api', apiRoute, async function logar() {
             await comentarioBloqueado(page, '.gxNyb')
 
 
-            await page.waitForTimeout(segundos(tempo));
-        } 
+
+        }
         console.log(email, x - 1)
-         
-        
+        await page.waitForTimeout(minutos(pausa));
+
+
 
     }
     comentario();
