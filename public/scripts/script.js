@@ -43,7 +43,7 @@ function newUser() {
         console.log(JSON.stringify(res));
     });
     fetch("http://localhost:3333/api/puppeteer", options).then(res => {
-", options).then(res => {
+ 
         console.log(JSON.stringify(res));
     });
     document.getElementById('userEmail').value = "";
