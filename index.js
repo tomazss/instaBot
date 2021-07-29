@@ -1,5 +1,5 @@
 const express = require('express');
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const users = require('./models/users')
 const apiRoute = require('./router/api')
 const app = express();
@@ -35,7 +35,7 @@ app.use('/api', apiRoute, async function logar() {
         
        
         slowMo: 380,
-       
+        executablePath: 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome',
         
        
             
