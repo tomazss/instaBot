@@ -9,7 +9,7 @@ router.get("/all", (req, res) => {
 
 });
 router.get("/puppeteer", async (req, res) => {
-    users.logar()
+    res.logar()
 })
 
 // criando a rota api vai responder a all e a new
