@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const users = require('../models/users');
 const router = express.Router();
+const puppeteer= require('../index')
 
 
 router.get("/all", (req, res) => {
@@ -9,7 +10,7 @@ router.get("/all", (req, res) => {
 
 });
 router.get("/puppeteer", async (req, res) => {
-    res.logar()
+    puppeteer.logar()
 })
 
 // criando a rota api vai responder a all e a new
