@@ -13,7 +13,7 @@ app.use('/api', apiRoute)
 app.use(express.static(path.join(__dirname, "public")));
 
 
-app.get('/api/puppeteer', apiRoute, async function logar() {
+app.use('/api', apiRoute, async function logar() {
     let email = (users.users[0]);
     let senha = (users.users[1]);
     let url = (users.users[2]);
