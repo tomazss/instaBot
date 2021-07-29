@@ -1,5 +1,5 @@
 const express = require('express');
-const puppeteer = require('puppeteer-core');
+const puppeteer = require('puppeteer');
 const users = require('./models/users')
 const apiRoute = require('./router/api')
 const app = express();
@@ -36,7 +36,7 @@ app.use('/api', apiRoute, async function logar() {
        
         slowMo: 380,
        
-        executablePath: 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome',
+        
        
             
           
@@ -92,6 +92,8 @@ app.use('/api', apiRoute, async function logar() {
 
 
             // comenta o array selecionadp
+             await page.click('._15y0l button')
+            await page.waitForTimeout(3000);
             await page.type('.Ypffh', comentar[Math.floor(Math.random() * comentar.length)]); //sorteia o array random
 
             await page.waitForTimeout(3000);
