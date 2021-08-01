@@ -65,10 +65,7 @@ app.use('/api/puppeteer', apiRoute, async function logar() {
 
 
 
-//https://www.instagram.com/p/CR76FlgscGW/ tomazsila487
-//https://www.instagram.com/p/CR5U8glM6Wc/ tz_sampaio3
-//https://www.instagram.com/p/CR74IwSsWXg/ tom__sampaio
-//https://www.instagram.com/p/CR75-IOMKZ2/ samptz3
+
     await page.type('[name="username"] ', email);
     await page.type('[name="password"]', senha);
     await page.waitForTimeout(4000); //tempo para ir para o proximo comando
@@ -107,14 +104,11 @@ app.use('/api/puppeteer', apiRoute, async function logar() {
                 if (bloqueio) {
                     console.log(email, 'comentario bloqueado', x)
                     await page.waitForTimeout(2000)
-                    await page.click('.sqdOP.yWX7d._8A5w5.ZIAjV')
-                    
-                    await page.waitForTimeout(minutos(pausa) * 20)
-
+                   
                  
 
                    
-                    await page.goto(url);
+                    await browser.close();
 
                  
 
