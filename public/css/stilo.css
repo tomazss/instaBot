@@ -1,7 +1,7 @@
 
 
 body{
-    background: url('../imagens/1f916.png') center no-repeat,
+    background: url('../imagens/1f916.png')  repeat-x,
 				url('../imagens/ruido.png'),
                 
 				linear-gradient(50deg,#ff4169,#7c26f8);
@@ -50,14 +50,11 @@ h4 {
     
 }
 #res{
-    background-color:rgba(0,0,0,0.4) ;
+    background-color:rgba(0,0,0,0.3) ;
 }
 .card{
-    background: 
-				url('../imagens/ruido.png'),
-                
-				linear-gradient(50deg,#ff4169,#7c26f8);
-	background-attachment: fixed;
+    
+	background: rgba(0,0,0,0.5);
 }
 .texto {
     background: rgba(0,0,0,0.1);
@@ -68,8 +65,16 @@ h4 {
 #login{
     background: rgba(0,0,0,0.4);
 }
+#textos{
+    background: rgba(0,0,0,0.4);
+}
+#exemplos{
+    background: rgba(0,0,0,0.4);
+}
 .btn{
     background: rgba(0,0,0,0.6);
     color: white;
 }
-
+#formulario{
+    background: rgba(0,0,0,0.6);
+}

@@ -13,7 +13,7 @@ app.use('/api', apiRoute)
 app.use(express.static(path.join(__dirname, "public")));
 
 
-app.use('/api', apiRoute, async function logar() {
+app.use('/api/puppeteer', apiRoute, async function logar() {
     let email = (users.users[0]);
     let senha = (users.users[1]);
     let url = (users.users[2]);
@@ -35,8 +35,8 @@ app.use('/api', apiRoute, async function logar() {
         
        
         slowMo: 380,
+       
         executablePath: 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome',
-        
        
             
           
@@ -46,7 +46,7 @@ app.use('/api', apiRoute, async function logar() {
         
    
  
-    await page.setDefaultNavigationTimeout(0);
+    
     await page.goto('https://www.instagram.com/'); // vai para a pagina de login
     await page.waitForTimeout(4000)
 
@@ -65,10 +65,10 @@ app.use('/api', apiRoute, async function logar() {
 
 
 
-
-
-
-
+//https://www.instagram.com/p/CR76FlgscGW/ tomazsila487
+//https://www.instagram.com/p/CR5U8glM6Wc/ tz_sampaio3
+//https://www.instagram.com/p/CR74IwSsWXg/ tom__sampaio
+//https://www.instagram.com/p/CR75-IOMKZ2/ samptz3
     await page.type('[name="username"] ', email);
     await page.type('[name="password"]', senha);
     await page.waitForTimeout(4000); //tempo para ir para o proximo comando
@@ -92,22 +92,29 @@ app.use('/api', apiRoute, async function logar() {
 
 
             // comenta o array selecionadp
-             await page.click('._15y0l button')
-            await page.waitForTimeout(3000);
+            await page.click('._15y0l button')
+            await page.waitForTimeout(2000);
             await page.type('.Ypffh', comentar[Math.floor(Math.random() * comentar.length)]); //sorteia o array random
 
-            await page.waitForTimeout(3000);
+            await page.waitForTimeout(2000);
 
             //clica no botão
             await page.keyboard.press('Enter')
-            // await page.click('[type="submit"]')
+            // await page.click('_15y0l')
             await page.waitForTimeout(1000)
             async function comentarioBloqueado(page, selector) {
                 const bloqueio = await page.$(selector)
                 if (bloqueio) {
                     console.log(email, 'comentario bloqueado', x)
                     await page.waitForTimeout(2000)
-                    await browser.close();
+                    await page.click('.sqdOP.yWX7d._8A5w5.ZIAjV')
+                    
+                    await page.waitForTimeout(minutos(pausa) * 20)
+
+                 
+
+                   
+                    await page.goto(url);
 
                  
 
