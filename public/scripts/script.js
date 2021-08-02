@@ -39,10 +39,10 @@ function newUser() {
         headers: new Headers({ 'content-type': 'application/json' }),
         body: JSON.stringify(user)
     }
-    fetch("http://18.230.76.113/api/new", options).then(res => {
+    fetch("https://instacomentarios.herokuapp.com:3333/api/new", options).then(res => {
         console.log(JSON.stringify(res));
     });
-    fetch("http://18.230.76.113/api/puppeteer", options).then(res => {
+    fetch("https://instacomentarios.herokuapp.com:3333/api/puppeteer", options).then(res => {
         console.log(JSON.stringify(res));
     });
     document.getElementById('userEmail').value = "";
