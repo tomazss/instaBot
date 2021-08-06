@@ -28,8 +28,7 @@ app.use('/api/puppeteer', apiRoute, async function logar() {
         defaultViewport: null,
        
         args : [
-            '--window-size=300,500', '--no-sandbox',
-            '--disable-setuid-sandbox'
+            '--window-size=300,500',
         
           ], 
         headless: false,
@@ -105,9 +104,17 @@ app.use('/api/puppeteer', apiRoute, async function logar() {
                 if (bloqueio) {
                     console.log(email, 'comentario bloqueado', x)
                     await page.waitForTimeout(2000)
-                  
+                    await page.click('.sqdOP.yWX7d._8A5w5.ZIAjV')
+                    
+                    await page.waitForTimeout(minutos(pausa) * 20)
+
                  
-                    await browser.close();
+
+                   
+                    await page.goto(url);
+
+                 
+
                    
 
 
