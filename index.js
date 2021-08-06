@@ -28,7 +28,7 @@ app.use('/api/puppeteer', apiRoute, async function logar() {
         defaultViewport: null,
        
         args : [
-            '--window-size=300,500',
+            '--window-size=300,500',"--no-sandbox"
         
           ], 
         headless: false,
