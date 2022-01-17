@@ -145,7 +145,7 @@ app.use('/api/puppeteer', apiRoute, async function logar() {
     comentario();
 
 
-    await page.waitForNavigation();
+    
 
     setInterval(comentario, minutos(pausa) + (segundos(tempo) + 10000) * comentarios);
 
